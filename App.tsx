@@ -14,6 +14,7 @@ import { Loading } from "./src/components/Loading";
 
 import { CartContextProvider } from "./src/contexts/CartContext";
 import { tagUserInfoCreate } from "./src/notifications/notificationsTags";
+import { useEffect } from "react";
 
 OneSignal.setAppId("2f4690af-4873-45dd-8da4-da152bc23584");
 
@@ -24,6 +25,13 @@ export default function App() {
 
   tagUserInfoCreate();
 
+  useEffect(() => {
+    const unsubscribe = OneSignal.setNotificationOpenedHandler(() => {
+      console.log("Notificação aberta");
+    });
+
+    return () => unsubscribe;
+  }, []);
   return (
     <NativeBaseProvider theme={THEME}>
       <StatusBar
