@@ -26,6 +26,7 @@ export default function App() {
   tagUserInfoCreate();
 
   useEffect(() => {
+    //Lidar com botões adicionais na notificação
     const unsubscribe = OneSignal.setNotificationOpenedHandler((response) => {
       const { actionId } = response.action as any;
 
