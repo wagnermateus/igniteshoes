@@ -10,7 +10,11 @@ import { AppRoutes } from "./app.routes";
 import { Notification } from "../components/Notification";
 
 const linking = {
-  prefixes: ["igniteshoesapp://", "com.rocketseat.igniteshoes://"],
+  prefixes: [
+    "igniteshoesapp://",
+    "com.mahayat.igniteshoes://",
+    "exp+igniteshoesapp://",
+  ],
   config: {
     screens: {
       details: {
